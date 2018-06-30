@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{1ead3b2c-5501-48d8-b7ca-26bc52b86882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{eb4e030a-1d5a-45ee-9d51-d2bdd79da414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataModel">
+      <UniqueIdentifier>{25eb2f48-1a5f-478a-8847-c3fd538593d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataModel">
+      <UniqueIdentifier>{ac2d9f7f-dc23-4eee-ba78-384393622a2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -21,25 +33,40 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="MainFrame.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="PointCloudVis.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="MainFrame.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseData.h">
+      <Filter>Header Files\DataModel</Filter>
+    </ClInclude>
+    <ClInclude Include="DataModel.h">
+      <Filter>Header Files\DataModel</Filter>
+    </ClInclude>
+    <ClInclude Include="DataLoader.h">
+      <Filter>Header Files\DataModel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PointCloudVis.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MainFrame.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="PointCloudVis.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseData.cpp">
+      <Filter>Source Files\DataModel</Filter>
+    </ClCompile>
+    <ClCompile Include="DataLoader.cpp">
+      <Filter>Source Files\DataModel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

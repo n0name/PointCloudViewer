@@ -5,7 +5,7 @@
 
 BEGIN_MESSAGE_MAP(MainFrame, CFrameWnd)
 	ON_COMMAND(ID_FILE_LOAD, OnLoadFile)
-	ON_COMMAND(IDM_ABOUT, OnLoadFile)
+	ON_COMMAND(IDM_ABOUT, OnAbout)
 	ON_COMMAND(IDM_EXIT, OnExit)
 END_MESSAGE_MAP()
 
@@ -19,22 +19,25 @@ MainFrame::MainFrame(const std::wstring & rTitle)
 
 void MainFrame::OnAbout()
 {
-	/*AboutDlg dlg;
-	dlg.ShowWindow(SW_SHOW);*/
-	MessageBox(L"Testing");
+	AboutDlg *pAboutDlg = new AboutDlg();
+	pAboutDlg->ShowWindow(SW_SHOW);
 }
 
 void MainFrame::OnExit()
 {
+	DestroyWindow();
 }
 
 void MainFrame::OnLoadFile()
 {
+	CString fileName;
+	wchar_t* p = fileName.GetBuffer(MAX_PATH);
+	CFileDialog dlgFile(TRUE);
 }
 
 
 AboutDlg::AboutDlg(CWnd * pParentWnd)
 	: CDialog(IDD_ABOUTBOX, pParentWnd)
 {
-
+	Create(IDD_ABOUTBOX, pParentWnd);
 }

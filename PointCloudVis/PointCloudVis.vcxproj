@@ -157,6 +157,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseData.h" />
+    <ClInclude Include="DataLoader.h" />
+    <ClInclude Include="DataModel.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="PointCloudVis.h" />
     <ClInclude Include="Resource.h" />
@@ -164,6 +167,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseData.cpp" />
+    <ClCompile Include="DataLoader.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="PointCloudVis.cpp" />
     <ClCompile Include="stdafx.cpp">
