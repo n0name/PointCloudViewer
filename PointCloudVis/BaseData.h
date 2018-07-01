@@ -57,23 +57,5 @@ struct PointCloudContainer
 	std::valarray<DVector3D> m_Points;
 };
 
-struct BaseShape : PointCloudContainer
-{
-	DVector3D m_Position;
-};
-
-struct Cylinder : PointCloudContainer
-{
-	DVector3D m_Axis;
-	double m_Radius;
-	double m_Height;
-};
-
-struct Cone : PointCloudContainer
-{
-	DVector3D m_Axis;
-	double m_RadiusAtBase;
-	double m_Height;
-};
 
 } // namespace Data 

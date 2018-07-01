@@ -3,6 +3,8 @@
 
 #include "resource.h"
 
+#include "PointCloudVis.h"
+
 BEGIN_MESSAGE_MAP(MainFrame, CFrameWnd)
 	ON_COMMAND(ID_FILE_LOAD, OnLoadFile)
 	ON_COMMAND(IDM_ABOUT, OnAbout)
@@ -33,6 +35,14 @@ void MainFrame::OnLoadFile()
 	CString fileName;
 	wchar_t* p = fileName.GetBuffer(MAX_PATH);
 	CFileDialog dlgFile(TRUE);
+	OPENFILENAME& ofn = dlgFile.GetOFN();
+	ofn.lpstrFile = p;
+	ofn.nMaxFile = MAX_PATH;
+	dlgFile.DoModal();
+	fileName.ReleaseBuffer();
+
+	std::wstring fn = p;
+	Application::GetApplication()->LoadModel(fn);
 }
 
 

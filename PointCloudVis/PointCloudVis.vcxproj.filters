@@ -51,6 +51,9 @@
     <ClInclude Include="DataLoader.h">
       <Filter>Header Files\DataModel</Filter>
     </ClInclude>
+    <ClInclude Include="Shapes.h">
+      <Filter>Header Files\DataModel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -67,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="DataLoader.cpp">
       <Filter>Source Files\DataModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Shapes.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
