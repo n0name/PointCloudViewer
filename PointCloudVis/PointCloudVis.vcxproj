@@ -160,6 +160,8 @@
     <ClInclude Include="BaseData.h" />
     <ClInclude Include="DataLoader.h" />
     <ClInclude Include="DataModel.h" />
+    <ClInclude Include="GLProxy.h" />
+    <ClInclude Include="GLWindow.h" />
     <ClInclude Include="MainFrame.h" />
     <ClInclude Include="PointCloudVis.h" />
     <ClInclude Include="Resource.h" />
@@ -170,6 +172,8 @@
   <ItemGroup>
     <ClCompile Include="BaseData.cpp" />
     <ClCompile Include="DataLoader.cpp" />
+    <ClCompile Include="GLProxy.cpp" />
+    <ClCompile Include="GLWindow.cpp" />
     <ClCompile Include="MainFrame.cpp" />
     <ClCompile Include="PointCloudVis.cpp" />
     <ClCompile Include="Shapes.cpp" />

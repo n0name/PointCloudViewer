@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <afxwin.h>
+#include "GLProxy.h"
 
 struct MainFrame : public CFrameWnd
 {
@@ -11,7 +12,13 @@ struct MainFrame : public CFrameWnd
 	void OnExit();
 	void OnLoadFile();
 
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+
 	DECLARE_MESSAGE_MAP()
+
+	//GLProxy m_GLProxy;
+
+	GLWindow m_GLWindow;
 };
 
 struct AboutDlg : public CDialog

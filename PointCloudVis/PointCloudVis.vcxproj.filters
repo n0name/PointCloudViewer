@@ -54,6 +54,12 @@
     <ClInclude Include="Shapes.h">
       <Filter>Header Files\DataModel</Filter>
     </ClInclude>
+    <ClInclude Include="GLWindow.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="GLProxy.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -72,6 +78,12 @@
       <Filter>Source Files\DataModel</Filter>
     </ClCompile>
     <ClCompile Include="Shapes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLProxy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
