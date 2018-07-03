@@ -22,6 +22,7 @@ public:
 
 	void oglInitialize();
 	void oglCreate(const RECT &rRect, CWnd *pParent = nullptr);
+	void oglRenderScene();
 
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);

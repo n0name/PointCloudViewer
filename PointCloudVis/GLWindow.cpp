@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "GLWindow.h"
+#include "PointCloudVis.h"
+#include "DataModel.h"
 
 BEGIN_MESSAGE_MAP(GLWindow, CWnd)
 	ON_WM_PAINT()
@@ -55,7 +57,9 @@ void GLWindow::oglInitialize()
 
 	// Turn on depth testing
 	glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_POINTS);
 	glDepthFunc(GL_LEQUAL);
+	glPointSize(10.0);
 
 	// Send draw request
 	OnDraw(NULL);
@@ -63,6 +67,7 @@ void GLWindow::oglInitialize()
 
 void GLWindow::OnDraw(CDC * pDC)
 {
+	//volatile int debug = 123;
 	// TODO: Camera
 }
 
@@ -86,6 +91,26 @@ void GLWindow::OnPaint() {
 	ValidateRect(NULL);
 }
 
+void GLWindow::oglRenderScene()
+{
+	const Data::DataModel* model = Application::GetApplication()->GetModel();
+	if (model == nullptr)
+		return;
+
+	glColor3f(0., 1., 0.);
+	glBegin(GL_POINTS);
+	for (const auto &feature : model->m_Features)
+	{
+		for (const auto &pt : feature->m_Points)
+		{
+			glVertex3f(pt.x, pt.y, pt.z - 10.0);
+			glColor3f(0., 1., 0.);
+		}
+	}
+
+	glEnd();
+}
+
 void GLWindow::OnTimer(UINT_PTR  nIDEvent)
 {
 	switch (nIDEvent)
@@ -96,7 +121,7 @@ void GLWindow::OnTimer(UINT_PTR  nIDEvent)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// Draw OpenGL scene
-		// oglDrawScene();
+		oglRenderScene();
 
 		// Swap buffers
 		SwapBuffers(m_hdc);
