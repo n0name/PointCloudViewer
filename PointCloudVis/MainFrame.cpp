@@ -58,6 +58,7 @@ int MainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	ScreenToClient(rect);
 	m_GLWindow.oglCreate(rect, this);
 	m_GLWindow.m_unpTimer = m_GLWindow.SetTimer(1, 1, 0);
+	m_GLWindow.SetFocus();
 
 	return 0;
 }

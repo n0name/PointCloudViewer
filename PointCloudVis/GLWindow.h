@@ -16,7 +16,6 @@ class GLWindow : public CWnd
 		float m_fLastY = 0.0f;
 	};
 
-
 private:
 	CWnd * m_pHwnd				= nullptr;
 	HDC		 m_hdc					= nullptr;
@@ -26,6 +25,10 @@ private:
 	CRect	 m_oldWnd;
 	CRect	 m_originalRect;
 
+	bool m_IsPerspective = true;
+
+	int lastCx = 0, lastCy = 0;
+
 	GLCamera m_camera;
 
 public:
@@ -34,6 +37,7 @@ public:
 	void oglInitialize();
 	void oglCreate(const RECT &rRect, CWnd *pParent = nullptr);
 	void oglRenderScene();
+	void SetupProjection(int cx, int cy);
 
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
@@ -41,5 +45,9 @@ public:
 	afx_msg void OnPaint();
 	afx_msg void OnDraw(CDC *pDC);
 	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+	afx_msg BOOL OnMouseWheel(UINT p1, short p2, CPoint p3);
+	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
+
+
 	DECLARE_MESSAGE_MAP();
 };
