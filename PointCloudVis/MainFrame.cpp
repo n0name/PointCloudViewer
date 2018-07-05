@@ -10,6 +10,7 @@ BEGIN_MESSAGE_MAP(MainFrame, CFrameWnd)
 	ON_COMMAND(IDM_ABOUT, OnAbout)
 	ON_COMMAND(IDM_EXIT, OnExit)
 	ON_WM_CREATE()
+	ON_WM_SIZE()
 END_MESSAGE_MAP()
 
 
@@ -51,11 +52,6 @@ int MainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	//CRect rect;
-	//GetWindowRect(rect);
-
-	//m_GLProxy.SetWindowPos(this, 0, 0, rect.Width(), rect.Height(), SWP_NOREDRAW);
-
 	CRect rect;
 	GetWindowRect(rect);
 
@@ -64,6 +60,11 @@ int MainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_GLWindow.m_unpTimer = m_GLWindow.SetTimer(1, 1, 0);
 
 	return 0;
+}
+
+void MainFrame::OnSize(UINT nType, int cx, int cy)
+{
+	m_GLWindow.SetWindowPos(nullptr, 0, 0, cx, cy, 0);
 }
 
 
